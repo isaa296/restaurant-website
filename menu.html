@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Menu – Nile Food Restaurant – Juba</title>
+    <meta name="description" content="Explore Nile Food Restaurant menu with prices and order your favorite dishes via WhatsApp in Juba, South Sudan.">
+
+    <meta property="og:title" content="Menu – Nile Food Restaurant – Juba">
+    <meta property="og:description" content="Explore Nile Food Restaurant menu with prices and order your favorite dishes via WhatsApp in Juba, South Sudan.">
+    <meta property="og:type" content="restaurant.menu">
+    <meta property="og:url" content="https://yourwebsite.com/menu.html">
+    <meta property="og:image" content="https://yourwebsite.com/img/menu-social.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Menu – Nile Food Restaurant – Juba">
+    <meta name="twitter:description" content="Explore Nile Food Restaurant menu with prices and order your favorite dishes via WhatsApp in Juba, South Sudan.">
+    <meta name="twitter:image" content="https://yourwebsite.com/img/menu-social.jpg">
+
+    <link rel="icon" href="img/favicon.png" type="image/png">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Menu",
+      "name": "Nile Food Restaurant Menu",
+      "url": "https://yourwebsite.com/menu.html",
+      "hasMenuSection": [
+        {
+          "@type": "MenuSection",
+          "name": "Main Dishes"
+        },
+        {
+          "@type": "MenuSection",
+          "name": "Desserts"
+        }
+      ]
+    }
+    </script>
+
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <style>
+        html {
+    scroll-behavior: smooth;
+}
+
+
+         * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #0b0b0b;
+            color: #ffffff;
+        }
+
+        /* HEADER */
+        header {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(6px);
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 18px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* LOGO */
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #d4af37; /* Gold */
+            letter-spacing: 1px;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: #ffffff;
+        }
+
+        /* NAVIGATION */
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 0.95rem;
+            font-weight: 500;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0%;
+            height: 2px;
+            left: 0;
+            bottom: -6px;
+            background-color: #d4af37;
+            transition: width 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #d4af37;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        /* MOBILE MENU */
+        .menu-toggle {
+            display: none;
+            font-size: 1.6rem;
+            color: #d4af37;
+            cursor: pointer;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            nav {
+                position: absolute;
+                top: 100%;
+                right: 0;
+                background: #000000;
+                width: 100%;
+                display: none;
+                flex-direction: column;
+                padding: 20px 0;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            #menu-checkbox:checked ~ nav {
+                display: flex;
+            }
+        }
+
+        
+ /* HERO SECTION */
+.menu-hero {
+    background-color: #000; /* black background */
+    color: #fff;
+    padding: 60px 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Flex container */
+.menu-hero .hero-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap; /* stacks on mobile */
+    gap: 20px;
+}
+
+/* Left: Hero Text + Button */
+.menu-hero .hero-left {
+    flex: 1;
+    min-width: 250px;
+}
+
+.menu-hero .hero-left h1 {
+    font-size: 3rem;
+    color: #FFD700;
+    margin-bottom: 20px;
+}
+
+.menu-hero .hero-left p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.menu-hero .hero-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #FFD700;
+    color: #000;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.menu-hero .hero-btn:hover {
+    background-color: #e6c200;
+}
+
+/* Right: Image */
+.menu-hero .hero-right {
+    flex: 1;
+    min-width: 250px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.menu-hero .hero-right img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+/* Image hover effect */
+.menu-hero .hero-right img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Hover animation */
+.menu-hero .hero-right img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3); /* soft gold glow */
+}
+
+
+/* Responsive: stack on mobile */
+@media (max-width: 768px) {
+    .menu-hero .hero-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .menu-hero .hero-right {
+        justify-content: center;
+        margin-top: 20px;
+    }
+}
+
+.menu-filters {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 10px 22px;
+    border: 1px solid #FFD700;
+    background: transparent;
+    color: #FFD700;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: 0.3s;
+    font-weight: 600;
+}
+
+.filter-btn:hover {
+    background: #FFD700;
+    color: #000;
+}
+
+.filter-btn.active {
+    background: #FFD700;
+    color: #000;
+}
+
+/* ================================
+   SITE-WIDE ORDER CTA BANNER
+================================ */
+.order-cta {
+    width: 100%;
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 40px 50px;
+    background: #0b0b0b;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    box-shadow: 3px 3px 2px goldenrod;
+}
+
+/* TEXT */
+.order-cta-text h2 {
+    font-size: 2.2rem;
+    color: #d4af37;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.order-cta-text p {
+    font-size: 1.05rem;
+    color: #dddddd;
+    line-height: 1.6;
+}
+
+/* BUTTON */
+.order-cta-btn {
+    display: inline-block;
+    padding: 16px 38px;
+    background: #d4af37;
+    color: #000;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 30px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    transition: all 0.3s ease;
+    white-space: nowrap;
+
+}
+
+.order-cta-btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 12px 30px rgba(212,175,55,0.5);
+    background: #b8962e;
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+@media (max-width: 768px) {
+    .order-cta {
+        flex-direction: column;
+        text-align: center;
+        padding: 35px 25px;
+    }
+
+    .order-cta-text h2 {
+        font-size: 1.9rem;
+    }
+
+    .order-cta-text p {
+        font-size: 1rem;
+    }
+
+    .order-cta-btn {
+        margin-top: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .order-cta {
+        margin: 60px 15px;
+        padding: 30px 20px;
+    }
+
+    .order-cta-text h2 {
+        font-size: 1.7rem;
+    }
+
+    .order-cta-text p {
+        font-size: 0.95rem;
+    }
+
+    .order-cta-btn {
+        padding: 14px 30px;
+        font-size: 0.95rem;
+    }
+}
+
+/* DAILY SPECIALS BANNER */
+.daily-specials {
+    margin: 30px 0;
+    text-align: center;
+}
+
+.daily-specials .special-banner {
+    display: inline-block;
+    background-color: #FFD700; /* gold background */
+    color: #000;
+    font-style: italic;
+    padding: 15px 25px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 1.2rem;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+    animation: pulseBanner 2s infinite;
+    transition: transform 0.3s ease;
+}
+
+.daily-specials .special-banner:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+.daily-specials .special-banner a {
+    color: #000;
+    text-decoration: underline;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+/* Pulse animation */
+@keyframes pulseBanner {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.5); }
+    100% { transform: scale(1); }
+}
+
+
+/* MENU GRID SECTION */
+
+.menu
+        .menu-section {
+            padding: 80px 20px;
+        }
+
+        .menu-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #d4af37;
+            margin-bottom: 10px;
+        }
+
+        .menu-subtitle {
+            text-align: center;
+            color: #cccccc;
+            margin-bottom: 50px;
+        }
+
+        .menu-grid {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-bottom: 10px;
+        }
+
+        .menu-card {
+            background: #1a1a1a;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .menu-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+        }
+
+        .menu-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .menu-card-content {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .menu-card-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+        }
+
+        .menu-card-content p {
+            font-size: 0.95rem;
+            color: #cccccc;
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+
+        .price {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #d4af37;
+            margin-bottom: 15px;
+        }
+
+        /* QUANTITY CONTROLS */
+        .quantity-control {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .qty-btn {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border: none;
+            background: #d4af37;
+            color: #000;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .qty-btn:hover {
+            background: #b8962e;
+            transform: scale(1.1);
+        }
+
+        .qty-number {
+            min-width: 30px;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        /* ORDER BUTTON */
+        .order-btn {
+            margin-top: auto;
+            padding: 12px;
+            border: none;
+            border-radius: 30px;
+            background: #d4af37;
+            color: #000;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .order-btn:hover {
+            background: transparent;
+            color: #d4af37;
+            border: 2px solid #d4af37;
+            transform: translateY(-2px);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 992px) {
+            .menu-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .menu-title {
+                font-size: 2rem;
+            }
+        }
+
+        /* Floating WhatsApp Button */
+.floating-whatsapp {
+    position: fixed;
+    bottom: 30px;       /* distance from bottom */
+    right: 30px;        /* distance from right */
+    z-index: 1000;      /* stay on top */
+    width: 60px;
+    font-size: small;
+    color: white;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #25D366; /* WhatsApp green */
+    border-radius: 50%;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Animation */
+.floating-whatsapp:hover {
+    transform: scale(1.1);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.4);
+}
+
+/* Icon inside button */
+.floating-whatsapp img {
+    width: 35px;
+    height: 35px;
+}
+@keyframes pulse {
+    0% { transform: scale(1); box-shadow: 0 0 0 rgba(37,211,102,0.4);}
+    50% { transform: scale(1.1); box-shadow: 0 0 15px rgba(37,211,102,0.6);}
+    100% { transform: scale(1); box-shadow: 0 0 0 rgba(37,211,102,0.4);}
+}
+
+.floating-whatsapp {
+    animation: pulse 2s infinite;
+}
+@media(min-width: 769px) {
+    .floating-whatsapp {
+        display: none;
+    }
+}
+
+        /* FOOTER SECTION */
+.footer-section {
+    width: 100%;
+    background: #0b0b0b;
+    color: #cccccc;
+    font-family: 'Poppins', sans-serif;
+    padding: 60px 20px 20px 20px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* COLUMNS */
+.footer-columns {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.footer-column h3 {
+    color: #d4af37;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.footer-column p {
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+.footer-column.about p {
+    color: #dddddd;
+}
+
+/* SOCIAL ICONS */
+.social-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.social-icons a {
+    text-decoration: none;
+    color: #cccccc;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #d4af37;
+    transform: translateY(-2px);
+}
+
+/* COPYRIGHT */
+.footer-bottom {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #777777;
+    border-top: 1px solid #222;
+    padding-top: 15px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .footer-columns {
+        flex-direction: column;
+        text-align: center;
+        gap: 25px;
+    }
+
+    .social-icons {
+        flex-direction: row;
+        justify-content: center;
+        gap: 15px;
+    }
+}
+    </style>
+</head>
+<body>
+    
+    
+<header>
+    <div class="nav-container">
+        <!-- LOGO -->
+        <a href="#" class="logo">Nile<span>food</span> Restaurant</a>
+
+        <!-- MOBILE TOGGLE -->
+        <label for="menu-checkbox" class="menu-toggle">&#9776;</label>
+        <input type="checkbox" id="menu-checkbox" hidden>
+
+        <!-- NAV -->
+        <nav>
+           <ul>
+            
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<!-- HERO SECTION -->
+<section class="menu-hero">
+    <div class="hero-content">
+
+        <!-- Left: Order Button -->
+        <div class="hero-left">
+            <h1>Our Menu</h1>
+            <p>Browse our dishes and order your favorites!</p>
+            <a href="https://wa.me/211923666154?text=Hello%20I%20want%20to%20order" class="hero-btn" target="_blank">Order via WhatsApp</a>
+        </div>
+
+        <!-- Right: Menu Poster -->
+        <div class="hero-right">
+            <img src="img/Black Modern Food Menu Portrait.jpg" alt="list of food" loading="lazy"
+>
+        </div>
+
+    </div>
+</section>
+
+
+<section class="order-cta">
+    <div class="order-cta-text">
+        <h2>Hungry? Order Now</h2>
+        <p>Fresh meals prepared daily. Fast delivery & takeaway available.</p>
+    </div>
+
+    <a href="https://wa.me/211923666154" target="_blank" class="order-cta-btn">
+        Order via WhatsApp
+    </a>
+</section>
+<!-- DAILY SPECIALS / PROMOTIONS -->
+<section class="daily-specials">
+    <div class="special-banner">
+        <p>🔥 Today’s Special: <strong>Grilled Chicken Combo</strong> – Only $14.99! <a href="https://wa.me/211923666154?text=Hello%2C%20I%20would%20like%20to%20order%20the%20Grilled%20Chicken%20Combo." target="_blank">Order Now</a></p>
+    </div>
+</section>
+
+<section class="menu-section">
+    <h2 class="menu-title">Our Menu</h2>
+    <p class="menu-subtitle">Select quantity and order instantly on WhatsApp</p>
+    <div class="menu-filters">
+    <button class="filter-btn active" data-category="all">All</button>
+    <button class="filter-btn" data-category="chicken">Chicken</button>
+    <button class="filter-btn" data-category="pizza">Pizza</button>
+    <button class="filter-btn" data-category="drinks">Drinks</button>
+</div>
+
+    <div class="menu-grid">
+
+        <!-- Grilled Chicken -->
+     <div class="menu-card" data-category="chicken" data-name="Grilled Chicken" data-price="$12.99">
+
+            <img src="https://images.unsplash.com/photo-1600891963935-c9c1b5c6e3c4?auto=format&fit=crop&w=900&q=80" alt="Grilled Chicken" loading="lazy"
+>
+            <div class="menu-card-content">
+                <h3>Grilled Chicken</h3>
+                <p>Juicy grilled chicken seasoned with herbs and spices.</p>
+                <div class="price">$12.99</div>
+
+                <div class="quantity-control">
+                    <button class="qty-btn minus">-</button>
+                    <span class="qty-number">1</span>
+                    <button class="qty-btn plus">+</button>
+                </div>
+
+                <button class="order-btn">Order via WhatsApp</button>
+            </div>
+        </div>
+
+        <!-- Beef Steak -->
+        <div class="menu-card" data-category="pizza"  data-name="Beef Steak" data-price="18.50">
+            <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=900&q=80" alt="Beef Steak" loading="lazy"
+>
+            <div class="menu-card-content">
+                <h3>Beef Steak</h3>
+                <p>Premium beef steak cooked to perfection.</p>
+                <div class="price">$18.50</div>
+
+                <div class="quantity-control">
+                    <button class="qty-btn minus">-</button>
+                    <span class="qty-number">1</span>
+                    <button class="qty-btn plus">+</button>
+                </div>
+
+                <button class="order-btn">Order via WhatsApp</button>
+            </div>
+        </div>
+
+        <!-- Veggie Pizza -->
+    <div class="menu-card" data-category="pizza" data-name="Veggie Pizza" data-price="$10.75">
+
+            <img src="https://images.unsplash.com/photo-1542281286-9e0a16bb7366?auto=format&fit=crop&w=900&q=80" alt="Veggie Pizza" loading="lazy"
+>
+            <div class="menu-card-content">
+                <h3>Veggie Pizza</h3>
+                <p>Fresh vegetables, melted cheese, crispy crust.</p>
+                <div class="price">$10.75</div>
+
+                <div class="quantity-control">
+                    <button class="qty-btn minus">-</button>
+                    <span class="qty-number">1</span>
+                    <button class="qty-btn plus">+</button>
+                </div>
+
+                <button class="order-btn">Order via WhatsApp</button>
+            </div>
+        </div>
+
+        <!-- Seafood Pasta -->
+        <div class="menu-card" data-category="drinks" data-name="Seafood Pasta" data-price="15.25">
+            <img src="https://images.unsplash.com/photo-1604908554026-9f5e1c74c4b4?auto=format&fit=crop&w=900&q=80" alt="Seafood Pasta" loading="lazy"
+>
+            <div class="menu-card-content">
+                <h3>Seafood Pasta</h3>
+                <p>Pasta mixed with fresh seafood and creamy sauce.</p>
+                <div class="price">$15.25</div>
+
+                <div class="quantity-control">
+                    <button class="qty-btn minus">-</button>
+                    <span class="qty-number">1</span>
+                    <button class="qty-btn plus">+</button>
+                </div>
+
+                <button class="order-btn">Order via WhatsApp</button>
+            </div>
+        </div>
+        <!-- fresh juice -->
+        <div class="menu-card" data-category="drinks" data-name="Seafood Pasta" data-price="15.25">
+            <img src="img/Green and Brown Simple Modern Bubble Tea Poster.png" alt="fresh juice" loading="lazy"
+>
+            <div class="menu-card-content">
+                <h3>fresh juice</h3>
+                <p>ovacado, watermelon juice</p>
+                <div class="price">$10.25</div>
+
+                <div class="quantity-control">
+                    <button class="qty-btn minus">-</button>
+                    <span class="qty-number">1</span>
+                    <button class="qty-btn plus">+</button>
+                </div>
+
+                <button class="order-btn">Order via WhatsApp</button>
+            </div>
+        </div>
+
+    </div>
+</section>
+<!-- Floating WhatsApp Button -->
+<a href="https://wa.me/211923666154" target="_blank" class="floating-whatsapp">
+    <img src="img/whatsapp-icon.png" alt="Order on WhatsApp" loading="lazy"
+>
+</a>
+
+
+<hr>
+
+<!-- FOOTER SECTION -->
+<footer class="footer-section">
+    <div class="footer-container">
+
+        <!-- FOOTER COLUMNS -->
+        <div class="footer-columns">
+
+            <!-- COLUMN 1: ABOUT -->
+            <div class="footer-column about">
+                <h3>Nile Food Restaurant</h3>
+                <p>Fresh. Tasty. Modern Dining.</p>
+            </div>
+
+            <!-- COLUMN 2: CONTACT -->
+            <div class="footer-column contact">
+                <h3>Contact</h3>
+                      <p>Hai-commercial street</p>
+                <p>Phone: +211 923666154/ +211 913195460</p>
+                <p>Hours: Mon-Sun 07:30 - 05:00</p>
+            </div>
+
+            <!-- COLUMN 3: SOCIAL MEDIA -->
+            <div class="footer-column social">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#" target="_blank">Facebook</a>
+                    <a href="#" target="_blank">Instagram</a>
+                    <a href="https://wa.me/211923666154?text=Hello%20I%20want%20to%20order" target="_blank">WhatsApp</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- COPYRIGHT -->
+        <div class="footer-bottom">
+            <p>&copy; 2026 Nile Food Restaurant. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+
+const phoneNumber = "211923666154"; // <-- CHANGE to correct full international format
+
+document.querySelectorAll('.menu-card').forEach(card => {
+    card.addEventListener('click', () => {
+        const dishName = card.getAttribute('data-name');
+        const price = card.getAttribute('data-price');
+
+        const message = `Hello, I would like to order ${dishName} (${price}). Please confirm availability.`;
+        const encodedMessage = encodeURIComponent(message);
+
+        const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+        window.open(whatsappURL, '_blank');
+    });
+});
+
+    // Quantity buttons logic
+    document.querySelectorAll('.menu-card').forEach(card => {
+        const minusBtn = card.querySelector('.minus');
+        const plusBtn = card.querySelector('.plus');
+        const qtyNumber = card.querySelector('.qty-number');
+        const orderBtn = card.querySelector('.order-btn');
+
+        let quantity = 1;
+
+        minusBtn.addEventListener('click', () => {
+            if (quantity > 1) {
+                quantity--;
+                qtyNumber.textContent = quantity;
+            }
+        });
+
+        plusBtn.addEventListener('click', () => {
+            quantity++;
+            qtyNumber.textContent = quantity;
+        });
+
+        orderBtn.addEventListener('click', () => {
+            const dishName = card.getAttribute('data-name');
+            const price = card.getAttribute('data-price');
+
+            const message = `Hello, I would like to order ${quantity}x ${dishName} ($${price} each). Please confirm availability and total price.`;
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappURL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
+
+            window.open(whatsappURL, '_blank');
+        });
+    });
+  
+const filterButtons = document.querySelectorAll('.filter-btn');
+const menuCards = document.querySelectorAll('.menu-card');
+
+filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        // Remove active class
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+
+        const category = button.getAttribute('data-category');
+
+        menuCards.forEach(card => {
+            const cardCategory = card.getAttribute('data-category');
+
+            if (category === 'all' || cardCategory === category) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    });
+});
+
+
+const specials = [
+    { name: "Grilled Chicken Combo", price: "$14.99" },
+    { name: "Veggie Pizza Deal", price: "$12.50" },
+    { name: "Seafood Pasta Special", price: "$16.75" },
+    { name: "Seafood Pasta Special", price: "$16.75" }
+];
+
+const banner = document.querySelector('.daily-specials .special-banner p');
+
+let current = 0;
+setInterval(() => {
+    const special = specials[current];
+    banner.innerHTML = `🔥 Today’s Special: <strong>${special.name}</strong> – Only ${special.price}! <a href="https://wa.me/211923666154?text=Hello%2C%20I%20would%20like%20to%20order%20the%20${encodeURIComponent(special.name)}." target="_blank">Order Now</a>`;
+    current = (current + 1) % specials.length;
+}, 7000); // rotates every 7 seconds
+
+
+</script>
+
+</body>
+</html>

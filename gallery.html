@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gallery – Nile Food Restaurant – Juba</title>
+    <meta name="description" content="View photos of Nile Food Restaurant dishes, interiors, and dining experience in Juba, South Sudan.">
+
+    <meta property="og:title" content="Gallery – Nile Food Restaurant – Juba">
+    <meta property="og:description" content="View photos of Nile Food Restaurant dishes, interiors, and dining experience in Juba, South Sudan.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourwebsite.com/gallery.html">
+    <meta property="og:image" content="https://yourwebsite.com/img/gallery-social.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Gallery – Nile Food Restaurant – Juba">
+    <meta name="twitter:description" content="View photos of Nile Food Restaurant dishes, interiors, and dining experience in Juba, South Sudan.">
+    <meta name="twitter:image" content="https://yourwebsite.com/img/gallery-social.jpg">
+
+    <link rel="icon" href="img/favicon.png" type="image/png">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ImageGallery",
+      "name": "Nile Food Restaurant Gallery",
+      "url": "https://yourwebsite.com/gallery.html"
+    }
+    </script>
+
+    <link rel="stylesheet" href="style.css">
+
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <style>
+html {
+    scroll-behavior: smooth;
+}
+
+         * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #0b0b0b;
+            color: #ffffff;
+        }
+
+        /* HEADER */
+        header {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(6px);
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 18px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* LOGO */
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #d4af37; /* Gold */
+            letter-spacing: 1px;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: #ffffff;
+        }
+
+        /* NAVIGATION */
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 0.95rem;
+            font-weight: 500;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0%;
+            height: 2px;
+            left: 0;
+            bottom: -6px;
+            background-color: #d4af37;
+            transition: width 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #d4af37;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        /* MOBILE MENU */
+        .menu-toggle {
+            display: none;
+            font-size: 1.6rem;
+            color: #d4af37;
+            cursor: pointer;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            nav {
+                position: absolute;
+                top: 100%;
+                right: 0;
+                background: #000000;
+                width: 100%;
+                display: none;
+                flex-direction: column;
+                padding: 20px 0;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            #menu-checkbox:checked ~ nav {
+                display: flex;
+            }
+        }
+
+
+/* ================================
+   GALLERY SECTION
+================================ */
+.gallery-section {
+    width: 100%;
+    padding: 100px 20px;
+    background: #0b0b0b;
+    text-align: center;
+}
+
+.gallery-title {
+    font-size: 2.5rem;
+    color: #d4af37;
+    margin-bottom: 50px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 18px;
+    cursor: pointer;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 18px 45px rgba(212,175,55,0.4);
+}
+
+.gallery-img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover .gallery-img {
+    transform: scale(1.1);
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.6);
+    color: #d4af37;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 12px 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-item:hover .overlay {
+    opacity: 1;
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+@media (max-width: 992px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-title {
+        font-size: 2rem;
+        margin-bottom: 35px;
+    }
+}
+/* ================================
+   SITE-WIDE ORDER CTA BANNER
+================================ */
+.order-cta {
+    width: 100%;
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 40px 50px;
+    background: #0b0b0b;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    box-shadow: 3px 3px 2px goldenrod;
+}
+
+/* TEXT */
+.order-cta-text h2 {
+    font-size: 2.2rem;
+    color: #d4af37;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.order-cta-text p {
+    font-size: 1.05rem;
+    color: #dddddd;
+    line-height: 1.6;
+}
+
+/* BUTTON */
+.order-cta-btn {
+    display: inline-block;
+    padding: 16px 38px;
+    background: #d4af37;
+    color: #000;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 30px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    box-shadow: 3px 3px 2px goldenrod;
+}
+
+.order-cta-btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 12px 30px rgba(212,175,55,0.5);
+    background: #b8962e;
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+@media (max-width: 768px) {
+    .order-cta {
+        flex-direction: column;
+        text-align: center;
+        padding: 35px 25px;
+    }
+
+    .order-cta-text h2 {
+        font-size: 1.9rem;
+    }
+
+    .order-cta-text p {
+        font-size: 1rem;
+    }
+
+    .order-cta-btn {
+        margin-top: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .order-cta {
+        margin: 60px 15px;
+        padding: 30px 20px;
+    }
+
+    .order-cta-text h2 {
+        font-size: 1.7rem;
+    }
+
+    .order-cta-text p {
+        font-size: 0.95rem;
+    }
+
+    .order-cta-btn {
+        padding: 14px 30px;
+        font-size: 0.95rem;
+    }
+}
+
+        /* FOOTER SECTION */
+.footer-section {
+    width: 100%;
+    background: #0b0b0b;
+    color: #cccccc;
+    font-family: 'Poppins', sans-serif;
+    padding: 60px 20px 20px 20px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* COLUMNS */
+.footer-columns {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.footer-column h3 {
+    color: #d4af37;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.footer-column p {
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+.footer-column.about p {
+    color: #dddddd;
+}
+
+/* SOCIAL ICONS */
+.social-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.social-icons a {
+    text-decoration: none;
+    color: #cccccc;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #d4af37;
+    transform: translateY(-2px);
+}
+
+/* COPYRIGHT */
+.footer-bottom {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #777777;
+    border-top: 1px solid #222;
+    padding-top: 15px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .footer-columns {
+        flex-direction: column;
+        text-align: center;
+        gap: 25px;
+    }
+
+    .social-icons {
+        flex-direction: row;
+        justify-content: center;
+        gap: 15px;
+    }
+}
+
+    </style>
+</head>
+<body>
+    
+    
+<header>
+    <div class="nav-container">
+        <!-- LOGO -->
+        <a href="#" class="logo">Nile<span>food</span> Restaurant</a>
+
+        <!-- MOBILE TOGGLE -->
+        <label for="menu-checkbox" class="menu-toggle">&#9776;</label>
+        <input type="checkbox" id="menu-checkbox" hidden>
+
+        <!-- NAV -->
+        <nav>
+           <ul>
+            
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+    
+</header>
+
+<section class="gallery-section">
+    <h2 class="gallery-title">Our Gallery</h2>
+    <div class="gallery-grid">
+
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1600891963935-c9c1b5c6e3c4?auto=format&fit=crop&w=800&q=80" alt="Grilled Dish" class="gallery-img" loading="lazy"
+>
+            <div class="overlay">Grilled Dish</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="img/Black Modern Food Menu Portrait.jpg" alt="Restaurant Interior" class="gallery-img" loading="lazy"
+>
+            <div class="overlay">Restaurant menu</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="img/Brown Modern Special Price Food Menu Poster.png" alt="Fresh Salad" class="gallery-img" loading="lazy"
+>
+            <div class="overlay">Fresh Salad</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="img/Green and Brown Simple Modern Bubble Tea Poster.png" alt="Seafood Pasta" class="gallery-img" loading="lazy"
+>
+            <div class="overlay">Seafood Pasta</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1601050690180-64f11d997ec6?auto=format&fit=crop&w=800&q=80" alt="Dessert" class="gallery-img" loading="lazy"
+>
+            <div class="overlay">Dessert</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=800&q=80" alt="Dining Area" class="gallery-img" loading="lazy"
+>
+            <div class="overlay">Dining Area</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=800&q=80" alt="Beverages" class="gallery-img" loading="lazy"
+>
+            <div class="overlay">Beverages</div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="https://images.unsplash.com/photo-1559628232-7a57c8e30c65?auto=format&fit=crop&w=800&q=80" alt="Chef Cooking" class="gallery-img" loading="lazy"
+>
+            <div class="overlay">Chef Cooking</div>
+        </div>
+
+    </div>
+</section>
+
+<section class="order-cta">
+    <div class="order-cta-text">
+        <h2>Hungry? Order Now</h2>
+        <p>Fresh meals prepared daily. Fast delivery & takeaway available.</p>
+    </div>
+
+    <a href="https://wa.me/211923666154" target="_blank" class="order-cta-btn">
+        Order via WhatsApp
+    </a>
+</section>
+<hr>
+
+<!-- FOOTER SECTION -->
+<footer class="footer-section">
+    <div class="footer-container">
+
+        <!-- FOOTER COLUMNS -->
+        <div class="footer-columns">
+
+            <!-- COLUMN 1: ABOUT -->
+            <div class="footer-column about">
+                <h3>Nile Food Restaurant</h3>
+                <p>Fresh. Tasty. Modern Dining.</p>
+            </div>
+
+            <!-- COLUMN 2: CONTACT -->
+            <div class="footer-column contact">
+                <h3>Contact</h3>
+                 <p>Hai-commercial street</p>
+                <p>Phone: +211 923666154/ +211 913195460</p>
+                <p>Hours: Mon-Sun 07:30 - 05:00</p>
+            </div>
+
+            <!-- COLUMN 3: SOCIAL MEDIA -->
+            <div class="footer-column social">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#" target="_blank">Facebook</a>
+                    <a href="#" target="_blank">Instagram</a>
+                    <a href="https://wa.me/0923666154" target="_blank">WhatsApp</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- COPYRIGHT -->
+        <div class="footer-bottom">
+            <p>&copy; 2026 Nile Food Restaurant. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+<script>
+/* ================================
+   INTERACTIVE LIGHTBOX WITH ORDER BUTTON
+================================ */
+
+const galleryItems = document.querySelectorAll('.gallery-item');
+
+galleryItems.forEach(item => {
+    item.addEventListener('click', () => {
+        const imgSrc = item.querySelector('.gallery-img').src;
+        const dishName = item.querySelector('.gallery-img').alt || "Dish";
+
+        // Create overlay
+        const lightbox = document.createElement('div');
+        lightbox.style.position = 'fixed';
+        lightbox.style.top = 0;
+        lightbox.style.left = 0;
+        lightbox.style.width = '100%';
+        lightbox.style.height = '100%';
+        lightbox.style.background = 'rgba(0,0,0,0.95)';
+        lightbox.style.display = 'flex';
+        lightbox.style.flexDirection = 'column';
+        lightbox.style.alignItems = 'center';
+        lightbox.style.justifyContent = 'center';
+        lightbox.style.cursor = 'zoom-out';
+        lightbox.style.zIndex = '10000';
+        lightbox.style.padding = '20px';
+        lightbox.style.boxSizing = 'border-box';
+
+        // Create image
+        const img = document.createElement('img');
+        img.src = imgSrc;
+        img.style.maxWidth = '90%';
+        img.style.maxHeight = '60%';
+        img.style.borderRadius = '12px';
+        img.style.boxShadow = '0 12px 35px rgba(212,175,55,0.5)';
+        lightbox.appendChild(img);
+
+        // Dish name caption
+        const caption = document.createElement('div');
+        caption.textContent = dishName;
+        caption.style.color = '#FFD700';
+        caption.style.fontSize = '1.5rem';
+        caption.style.fontWeight = '600';
+        caption.style.marginTop = '15px';
+        lightbox.appendChild(caption);
+
+        // WhatsApp order button
+        const orderBtn = document.createElement('a');
+        orderBtn.href = `https://wa.me/211923666154?text=Hello%2C%20I%20would%20like%20to%20order%20the%20${encodeURIComponent(dishName)}.`;
+        orderBtn.target = '_blank';
+        orderBtn.textContent = 'Order via WhatsApp';
+        orderBtn.style.marginTop = '15px';
+        orderBtn.style.padding = '12px 25px';
+        orderBtn.style.backgroundColor = '#FFD700';
+        orderBtn.style.color = '#000';
+        orderBtn.style.borderRadius = '8px';
+        orderBtn.style.fontWeight = '600';
+        orderBtn.style.textDecoration = 'none';
+        orderBtn.style.boxShadow = '0 6px 20px rgba(0,0,0,0.4)';
+        orderBtn.style.transition = 'transform 0.3s ease';
+        orderBtn.addEventListener('mouseover', () => {
+            orderBtn.style.transform = 'scale(1.05)';
+        });
+        orderBtn.addEventListener('mouseout', () => {
+            orderBtn.style.transform = 'scale(1)';
+        });
+        lightbox.appendChild(orderBtn);
+
+        // Close lightbox on click outside button
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) lightbox.remove();
+        });
+
+        document.body.appendChild(lightbox);
+    });
+});
+</script>
+
+</body>
+</html>

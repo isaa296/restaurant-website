@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nile Food Restaurant – Juba, South Sudan | Fresh & Authentic Cuisine</title>
+    <meta name="description" content="Nile Food Restaurant in Juba, South Sudan offers fresh, authentic African and international dishes. Order via WhatsApp or visit us near Usratana Hospital.">
+    <meta name="keywords" content="Nile Food Restaurant, Juba restaurant, African cuisine, fresh food, WhatsApp order, Nile Food menu">
+    <meta name="author" content="Nile Food Restaurant">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="Nile Food Restaurant – Juba, South Sudan">
+    <meta property="og:description" content="Fresh, authentic African and international dishes. Order via WhatsApp or visit us near Usratana Hospital.">
+    <meta property="og:type" content="restaurant">
+    <meta property="og:url" content="https://yourwebsite.com">
+    <meta property="og:image" content="https://yourwebsite.com/img/restaurant-social.jpg">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Nile Food Restaurant – Juba, South Sudan">
+    <meta name="twitter:description" content="Fresh, authentic African and international dishes. Order via WhatsApp or visit us near Usratana Hospital.">
+    <meta name="twitter:image" content="https://yourwebsite.com/img/restaurant-social.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" href="img/favicon.png" type="image/png">
+        <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "Nile Food Restaurant",
+      "image": "https://yourwebsite.com/img/restaurant-social.jpg",
+      "url": "https://yourwebsite.com",
+      "telephone": "+211923666154",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Near Usratana Hospital alongside Al-Saba Hospital",
+        "addressLocality": "Juba",
+        "addressCountry": "South Sudan"
+      },
+      "servesCuisine": ["African", "International"],
+      "priceRange": "$$",
+      "openingHours": [
+        "Mo-Su 10:00-22:00"
+      ]
+    }
+    </script>
+
+
+
+    <style>
+        html {
+    scroll-behavior: smooth;
+}
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #0b0b0b;
+            color: #ffffff;
+            scroll-behavior: smooth;
+        }
+
+        /* HEADER */
+        header {
+            position: sticky;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(6px);
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 18px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* LOGO */
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #d4af37; /* Gold */
+            letter-spacing: 1px;
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: #ffffff;
+        }
+
+        /* NAVIGATION */
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #ffffff;
+            font-size: 0.95rem;
+            font-weight: 500;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0%;
+            height: 2px;
+            left: 0;
+            bottom: -6px;
+            background-color: #d4af37;
+            transition: width 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #d4af37;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        /* MOBILE MENU */
+        .menu-toggle {
+            display: none;
+            font-size: 1.6rem;
+            color: #d4af37;
+            cursor: pointer;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            nav {
+                position: absolute;
+                top: 100%;
+                right: 0;
+                background: #000000;
+                width: 100%;
+                display: none;
+                flex-direction: column;
+                padding: 20px 0;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            #menu-checkbox:checked ~ nav {
+                display: flex;
+            }
+        }
+        /* HERO SECTION STYLES */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 90vh;
+    background: url(img/Google_AI_Studio_2026-02-01T05_49_08.415Z.png) center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 20px;
+}
+
+.hero-content h1 {
+    font-size: 3.2rem;
+    font-weight: 700;
+    color: #d4af37;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    color: #ffffff;
+    margin-bottom: 35px;
+}
+
+/* BUTTONS */
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.hero-btn {
+    padding: 12px 32px;
+    background: #d4af37;
+    color: #000000;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 1px solid #d4af37;
+}
+
+.hero-btn:hover {
+    background: transparent;
+    color: #d4af37;
+    transform: translateY(-2px);
+}
+
+.hero-btn.outline {
+    background: transparent;
+    color: #d4af37;
+}
+
+.hero-btn.outline:hover {
+    background: #d4af37;
+    color: #000000;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-content p {
+        font-size: 0.95rem;
+    }
+}
+/* ================================
+   SITE-WIDE ORDER CTA BANNER
+================================ */
+.order-cta {
+    width: 100%;
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 40px 50px;
+    background: #0b0b0b;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    box-shadow: 3px 3px 2px goldenrod;
+}
+
+/* TEXT */
+.order-cta-text h2 {
+    font-size: 2.2rem;
+    color: #d4af37;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+
+.order-cta-text p {
+    font-size: 1.05rem;
+    color: #dddddd;
+    line-height: 1.6;
+}
+
+/* BUTTON */
+.order-cta-btn {
+    display: inline-block;
+    padding: 16px 38px;
+    background: #d4af37;
+    color: #000;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 30px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.order-cta-btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 20px rgba(212,175,55,0.5);
+    color: #d4af37;
+    border: 1PX solid #d4af37 ;
+    background: #020202;
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+@media (max-width: 768px) {
+    .order-cta {
+        flex-direction: column;
+        text-align: center;
+        padding: 35px 25px;
+    }
+
+    .order-cta-text h2 {
+        font-size: 1.9rem;
+    }
+
+    .order-cta-text p {
+        font-size: 1rem;
+    }
+
+    .order-cta-btn {
+        margin-top: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .order-cta {
+        margin: 60px 15px;
+        padding: 30px 20px;
+    }
+
+    .order-cta-text h2 {
+        font-size: 1.7rem;
+    }
+
+    .order-cta-text p {
+        font-size: 0.95rem;
+    }
+
+    .order-cta-btn {
+        padding: 14px 30px;
+        font-size: 0.95rem;
+    }
+}
+
+
+/* ABOUT SECTION */
+.about-section {
+    width: 100%;
+    padding: 80px 20px;
+    background: #0b0b0b;
+    font-family: 'Poppins', sans-serif;
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+/* IMAGE */
+.about-image {
+    flex: 1;
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    object-fit: cover;
+}
+
+/* CONTENT */
+.about-content {
+    flex: 1;
+    color: #ffffff;
+}
+
+.about-content h4 {
+    color: #d4af37;
+    font-weight: 500;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.about-content h2 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.about-content p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #dddddd;
+    margin-bottom: 20px;
+}
+
+/* BUTTON */
+.about-btn {
+    display: inline-block;
+    padding: 12px 32px;
+    background: #d4af37;
+    color: #000000;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.about-btn:hover {
+    background: transparent;
+    color: #d4af37;
+    border: 1px solid #d4af37;
+    transform: translateY(-2px);
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .about-content h2 {
+        font-size: 2rem;
+    }
+}
+/* FEATURED DISHES SECTION */
+.featured-section {
+    width: 100%;
+    padding: 80px 20px;
+    background: #0b0b0b;
+    font-family: 'Poppins', sans-serif;
+}
+
+.featured-container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* HEADER */
+.featured-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.featured-header h2 {
+    font-size: 2.5rem;
+    color: #d4af37;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.featured-header p {
+    color: #cccccc;
+    font-size: 1rem;
+}
+
+/* GRID */
+.dishes-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+/* CARD */
+.dish-card {
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+}
+
+.dish-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+}
+
+.dish-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.dish-content {
+    padding: 20px;
+}
+
+.dish-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    color: #000000;
+}
+
+.dish-content p {
+    font-size: 0.9rem;
+    color: #555555;
+    margin-bottom: 12px;
+    line-height: 1.5;
+}
+
+.price {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #d4af37;
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+    .dishes-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .dishes-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .featured-header h2 {
+        font-size: 2rem;
+    }
+}
+
+/* WHY CHOOSE US SECTION */
+.why-choose-section {
+    width: 100%;
+    padding: 80px 20px;
+    background: #0b0b0b;
+    font-family: 'Poppins', sans-serif;
+}
+
+.why-container {
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+}
+
+/* SECTION HEADER */
+.why-header h2 {
+    font-size: 2.5rem;
+    color: #d4af37;
+    font-weight: 700;
+    margin-bottom: 50px;
+}
+
+/* FEATURES GRID */
+.features-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* FEATURE CARD */
+.feature-card {
+    background: #1a1a1a;
+    flex: 1 1 30%;
+    padding: 30px 20px;
+    border-radius: 16px;
+    
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(212, 175, 55, 0.5);
+    border: #d4af37 solid 2px;
+    box-shadow: 20px, 10px;
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    color: #d4af37;
+    margin-bottom: 20px;
+}
+
+.feature-card h3 {
+    font-size: 1.3rem;
+    color: #ffffff;
+    margin-bottom: 12px;
+}
+
+.feature-card p {
+    font-size: 0.95rem;
+    color: #cccccc;
+    line-height: 1.5;
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+    .features-grid {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .feature-card {
+        flex: 1 1 45%;
+    }
+}
+
+@media (max-width: 600px) {
+    .feature-card {
+        flex: 1 1 100%;
+    }
+
+    .why-header h2 {
+        font-size: 2rem;
+    }
+}
+
+/* CALL TO ACTION SECTION */
+.cta-section {
+    width: 100%;
+    padding: 80px 20px;
+    background: #0b0b0b;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+.cta-container h2 {
+    font-size: 2.5rem;
+    color: #d4af37;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.cta-container p {
+    font-size: 1rem;
+    color: #cccccc;
+    margin-bottom: 35px;
+}
+
+.cta-btn {
+    display: inline-block;
+    padding: 14px 40px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #000000;
+    background: #d4af37;
+    text-decoration: none;
+    border-radius: 30px;
+    box-shadow: 0 8px 20px rgba(212, 175, 55, 0.5);
+    transition: all 0.3s ease;
+}
+
+.cta-btn:hover {
+    background: transparent;
+    color: #d4af37;
+    border: 2px solid #d4af37;
+    transform: translateY(-3px);
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+    .cta-container h2 {
+        font-size: 2rem;
+    }
+
+    .cta-btn {
+        padding: 12px 30px;
+        font-size: 0.95rem;
+    }
+}
+
+/* FOOTER SECTION */
+.footer-section {
+    width: 100%;
+    background: #0b0b0b;
+    color: #cccccc;
+    font-family: 'Poppins', sans-serif;
+    padding: 60px 20px 20px 20px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* COLUMNS */
+.footer-columns {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.footer-column h3 {
+    color: #d4af37;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.footer-column p {
+    margin-bottom: 8px;
+    font-size: 0.95rem;
+}
+
+.footer-column.about p {
+    color: #dddddd;
+}
+
+/* SOCIAL ICONS */
+.social-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.social-icons a {
+    text-decoration: none;
+    color: #cccccc;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #d4af37;
+    transform: translateY(-2px);
+}
+
+/* COPYRIGHT */
+.footer-bottom {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #777777;
+    border-top: 1px solid #222;
+    padding-top: 15px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .footer-columns {
+        flex-direction: column;
+        text-align: center;
+        gap: 25px;
+    }
+
+    .social-icons {
+        flex-direction: row;
+        justify-content: center;
+        gap: 15px;
+    }
+}
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="nav-container">
+        <!-- LOGO -->
+        <a href="#" class="logo">Nile<span>food</span> Restaurant</a>
+
+        <!-- MOBILE TOGGLE -->
+        <label for="menu-checkbox" class="menu-toggle">&#9776;</label>
+        <input type="checkbox" id="menu-checkbox" hidden>
+
+        <!-- NAV -->
+        <nav>
+            <ul>
+            
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!-- HERO SECTION -->
+<section class="hero-section">
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+        <h1>Nile Food Restaurant</h1>
+        <p>Fresh. Tasty. Modern Dining.</p>
+
+        <div class="hero-buttons">
+            <a href="menu.html" class="hero-btn">View Menu</a>
+            <a href="contact.html" class="hero-btn outline">Contact Us</a>
+        </div>
+    </div>
+</section>
+
+<section class="order-cta">
+    <div class="order-cta-text">
+        <h2>Hungry? Order Now</h2>
+        <p>Fresh meals prepared daily. Fast delivery & takeaway available.</p>
+    </div>
+
+    <a href="https://wa.me/211923666154" target="_blank" class="order-cta-btn">
+        Order via WhatsApp
+    </a>
+</section>
+
+<!-- ABOUT PREVIEW SECTION -->
+<section class="about-section">
+    <div class="about-container">
+
+        <!-- LEFT IMAGE -->
+        <div class="about-image">
+            <img src="img/Brown Modern Special Price Food Menu Poster.png" alt="Restaurant Interior" loading="lazy"
+>
+        </div>
+
+        <!-- RIGHT CONTENT -->
+        <div class="about-content">
+            <h4>About Us</h4>
+            <h2>Experience the Taste of Quality</h2>
+            <p>
+                At Nile Food Restaurant, we believe great food starts with fresh ingredients, expert chefs, and a passion for excellence. 
+                Every dish is carefully prepared to deliver rich flavors, beautiful presentation, and unforgettable dining experiences.
+            </p>
+            <p>
+                From intimate dinners to family gatherings, we offer a warm atmosphere, professional service, and meals that keep our guests coming back.
+            </p>
+
+            <a href="#about" class="about-btn">Read More</a>
+        </div>
+
+    </div>
+</section>
+
+<!-- FEATURED DISHES SECTION -->
+<section class="featured-section">
+    <div class="featured-container">
+
+        <div class="featured-header">
+            <h2>Our Special Dishes</h2>
+            <p>Chef's Recommended Favorites</p>
+        </div>
+
+        <div class="dishes-grid">
+
+            <!-- DISH 1 -->
+            <div class="dish-card">
+                <img src="https://images.unsplash.com/photo-1600891963935-c9c1b5c6e3c4?auto=format&fit=crop&w=900&q=80" alt="Grilled Chicken" loading="lazy"
+>
+                <div class="dish-content">
+                    <h3>Grilled Chicken</h3>
+                    <p>Juicy grilled chicken seasoned with special herbs and spices.</p>
+                    <span class="price">$12.99</span>
+                </div>
+            </div>
+
+            <!-- DISH 2 -->
+            <div class="dish-card">
+                <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=900&q=80" alt="Beef Steak" loading="lazy"
+>
+                <div class="dish-content">
+                    <h3>Beef Steak</h3>
+                    <p>Premium beef steak cooked to perfection with rich flavor.</p>
+                    <span class="price">$18.50</span>
+                </div>
+            </div>
+
+            <!-- DISH 3 -->
+            <div class="dish-card">
+                <img src="https://images.unsplash.com/photo-1542281286-9e0a16bb7366?auto=format&fit=crop&w=900&q=80" alt="Veggie Pizza" loading="lazy"
+>
+                <div class="dish-content">
+                    <h3>Veggie Pizza</h3>
+                    <p>Fresh vegetables, melted cheese, and crispy crust.</p>
+                    <span class="price">$10.75</span>
+                </div>
+            </div>
+
+            <!-- DISH 4 -->
+            <div class="dish-card">
+                <img src="https://images.unsplash.com/photo-1604908554026-9f5e1c74c4b4?auto=format&fit=crop&w=900&q=80" alt="Seafood Pasta" loading="lazy"
+>
+                <div class="dish-content">
+                    <h3>Seafood Pasta</h3>
+                    <p>Delicious pasta mixed with fresh seafood and creamy sauce.</p>
+                    <span class="price">$15.25</span>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- WHY CHOOSE US SECTION -->
+<section class="why-choose-section">
+    <div class="why-container">
+
+        <!-- SECTION HEADER -->
+        <div class="why-header">
+            <h2>Why Choose Us</h2>
+        </div>
+
+        <!-- FEATURES GRID -->
+        <div class="features-grid">
+
+            <!-- FEATURE 1 -->
+            <div class="feature-card">
+                <div class="feature-icon">🍴</div>
+                <h3>Fresh Ingredients</h3>
+                <p>We use only the freshest ingredients to prepare every meal with care and quality.</p>
+            </div>
+
+            <!-- FEATURE 2 -->
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>Fast Service</h3>
+                <p>Our team ensures quick and efficient service so you can enjoy your meal without delay.</p>
+            </div>
+
+            <!-- FEATURE 3 -->
+            <div class="feature-card">
+                <div class="feature-icon">✨</div>
+                <h3>Clean Environment</h3>
+                <p>We maintain a spotless and welcoming environment for a premium dining experience.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- CALL TO ACTION SECTION -->
+<section class="cta-section">
+    <div class="cta-container">
+        <h2>Ready to enjoy great food?</h2>
+        <p>Order now and taste the difference</p>
+        <a href="https://wa.me/211923666154?text=Hello%20I%20want%20to%20order" class="cta-btn" target="_blank">Order via WhatsApp</a>
+    </div>
+</section>
+<hr>
+
+<!-- FOOTER SECTION -->
+<footer class="footer-section">
+    <div class="footer-container">
+
+        <!-- FOOTER COLUMNS -->
+        <div class="footer-columns">
+
+            <!-- COLUMN 1: ABOUT -->
+            <div class="footer-column about">
+                <h3>Nile Food Restaurant</h3>
+                <p>Fresh. Tasty. Modern Dining.</p>
+            </div>
+
+            <!-- COLUMN 2: CONTACT -->
+            <div class="footer-column contact">
+                <h3>Contact</h3>
+                      <p>Hai-commercial street</p>
+                <p>Phone: +211 923666154/ +211 913195460</p>
+                <p>Hours: Mon-Sun 07:30 - 05:00</p>
+            </div>
+
+            <!-- COLUMN 3: SOCIAL MEDIA -->
+            <div class="footer-column social">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#" target="_blank">Facebook</a>
+                    <a href="#" target="_blank">Instagram</a>
+                    <a href="https://wa.me/0923666154" target="_blank">WhatsApp</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- COPYRIGHT -->
+        <div class="footer-bottom">
+            <p>&copy; 2026 Nile Food Restaurant. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
