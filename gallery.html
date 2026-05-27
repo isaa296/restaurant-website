@@ -162,6 +162,38 @@ html {
 /* ================================
    GALLERY SECTION
 ================================ */
+
+/* FILTER BUTTONS */
+.gallery-filter {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 50px;
+}
+
+.filter-btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 30px;
+    background: #141414;
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 1px solid #333;
+}
+
+.filter-btn:hover {
+    background: #d4af37;
+    color: #000;
+    transform: translateY(-2px);
+}
+
+.filter-btn.active {
+    background: #d4af37;
+    color: #000;
+}
 .gallery-section {
     width: 100%;
     padding: 100px 20px;
@@ -453,12 +485,51 @@ html {
 
 <section class="gallery-section">
     <h2 class="gallery-title">Our Gallery</h2>
+
+    <!-- FILTER BUTTONS -->
+    <div class="gallery-filter">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="food">Food</button>
+        <button class="filter-btn" data-filter="interior">Interior</button>
+        <button class="filter-btn" data-filter="drinks">Drinks</button>
+        <button class="filter-btn" data-filter="team">Team</button>
+    </div>
     <div class="gallery-grid">
 
-        <div class="gallery-item">
+     <div class="gallery-item" data-category="food">
             <img src="img/orkun-orcan-xEr4D8ADUNU-unsplash.jpg" class="gallery-img" loading="lazy"
 >
             <div class="overlay">Grilled Dish</div>
+        </div>
+     <div class="gallery-item" data-category="food">
+            <img src="img/Grilled Chicken.jpg" class="gallery-img" loading="lazy"
+>
+            <div class="overlay">Grilled Chicken</div>
+        </div>
+     <div class="gallery-item" data-category="food">
+            <img src="img/Beef Steak.jpg" class="gallery-img" loading="lazy"
+>
+            <div class="overlay">beef steak</div>
+        </div>
+     <div class="gallery-item" data-category="food">
+            <img src="img/Pizza.jpg" class="gallery-img" loading="lazy"
+>
+            <div class="overlay">pizza</div>
+        </div>
+     <div class="gallery-item" data-category="food">
+            <img src="img/Drinks.jpg" class="gallery-img" loading="lazy"
+>
+            <div class="overlay">drinks</div>
+        </div>
+        <div class="gallery-item" data-category="food">
+            <img src="img/kobby-mendez-idTwDKt2j2o-unsplash.jpg" alt="Dessert" class="gallery-img" loading="lazy"
+>
+            <div class="overlay">Dessert</div>
+        </div>
+        <div class="gallery-item" data-category="food">
+            <img src="img/Seafood dishes.jpg" alt="Dessert" class="gallery-img" loading="lazy"
+>
+            <div class="overlay">seafood dish</div>
         </div>
 
         <div class="gallery-item">
@@ -467,37 +538,33 @@ html {
             <div class="overlay">Restaurant menu</div>
         </div>
 
-        <div class="gallery-item">
+   <div class="gallery-item" data-category="food">
             <img src="img/nadine-primeau--ftWfohtjNw-unsplash.jpg" alt="Fresh Salad" class="gallery-img" loading="lazy"
 >
             <div class="overlay">Fresh Salad</div>
         </div>
 
-        <div class="gallery-item">
+       <div class="gallery-item" data-category="food">
             <img src="img/alexandra-tran-Wkq8pm4Ugx0-unsplash.jpg" alt="Seafood Pasta" class="gallery-img" loading="lazy"
 >
             <div class="overlay">Seafood Pasta</div>
         </div>
 
-        <div class="gallery-item">
-            <img src="img/kobby-mendez-idTwDKt2j2o-unsplash.jpg" alt="Dessert" class="gallery-img" loading="lazy"
->
-            <div class="overlay">Dessert</div>
-        </div>
+       
 
-        <div class="gallery-item">
+        <div class="gallery-item" data-category="interior">
             <img src="img/lotus-design-n-print-O0vzxGRmjNs-unsplash.jpg" alt="Dining Area" class="gallery-img" loading="lazy"
 >
             <div class="overlay">Dining Area</div>
         </div>
 
-        <div class="gallery-item">
+       <div class="gallery-item" data-category="drinks">
             <img src="img/mae-mu-kbch-i63YTg-unsplash.jpg" alt="Beverages" class="gallery-img" loading="lazy"
 >
             <div class="overlay">Beverages</div>
         </div>
 
-        <div class="gallery-item">
+        <div class="gallery-item" data-category="team">
             <img src="img/jonathan-borba-uB7q7aipU2o-unsplash.jpg" alt="Chef Cooking" class="gallery-img" loading="lazy"
 >
             <div class="overlay">Chef Cooking</div>
@@ -558,6 +625,41 @@ html {
     </div>
 </footer>
 <script>
+
+    /* ================================
+   GALLERY FILTER SYSTEM
+================================ */
+
+const filterButtons = document.querySelectorAll('.filter-btn');
+const galleryCards = document.querySelectorAll('.gallery-item');
+
+filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+
+        // REMOVE ACTIVE CLASS
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+
+        // ADD ACTIVE CLASS
+        button.classList.add('active');
+
+        const filter = button.getAttribute('data-filter');
+
+        galleryCards.forEach(card => {
+
+            if (filter === 'all') {
+                card.style.display = 'block';
+            } else {
+                if (card.getAttribute('data-category') === filter) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            }
+
+        });
+
+    });
+});
 /* ================================
    INTERACTIVE LIGHTBOX WITH ORDER BUTTON
 ================================ */
