@@ -1,0 +1,519 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nile Food Admin Dashboard</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#0b0b0b;
+    color:white;
+    min-height:100vh;
+}
+
+/* HEADER */
+.admin-header{
+    width:100%;
+    background:#111;
+    padding:20px;
+    border-bottom:1px solid rgba(212,175,55,0.2);
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+.admin-header h1{
+    color:#d4af37;
+    font-size:2rem;
+}
+
+.admin-header p{
+    color:#ccc;
+    margin-top:5px;
+}
+
+/* LAYOUT */
+.dashboard{
+    max-width:1300px;
+    margin:40px auto;
+    padding:20px;
+    display:grid;
+    grid-template-columns:350px 1fr;
+    gap:30px;
+}
+
+/* FORM */
+.admin-form{
+    background:#111;
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.5);
+    height:fit-content;
+    border:1px solid rgba(212,175,55,0.15);
+}
+
+.admin-form h2{
+    color:#d4af37;
+    margin-bottom:20px;
+}
+
+.admin-form input,
+.admin-form textarea,
+.admin-form select{
+    width:100%;
+    margin-bottom:15px;
+    padding:14px;
+    border:none;
+    outline:none;
+    background:#1a1a1a;
+    color:white;
+    border-radius:12px;
+}
+
+.admin-form textarea{
+    resize:none;
+    height:100px;
+}
+
+.admin-form button{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:30px;
+    background:#d4af37;
+    color:black;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.admin-form button:hover{
+    transform:translateY(-2px);
+    background:#b8962e;
+}
+
+/* MENU AREA */
+.menu-preview{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+/* CARD */
+.menu-card{
+    background:#1a1a1a;
+    border-radius:20px;
+    overflow:hidden;
+    position:relative;
+    transition:0.3s;
+    border:1px solid rgba(255,255,255,0.05);
+}
+
+.menu-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 10px 25px rgba(212,175,55,0.2);
+}
+
+.menu-card img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:20px;
+}
+
+.card-content h3{
+    margin-bottom:10px;
+}
+
+.card-content p{
+    color:#ccc;
+    font-size:0.95rem;
+    margin-bottom:12px;
+}
+
+.price{
+    color:#d4af37;
+    font-weight:600;
+    margin-bottom:15px;
+}
+
+.category-tag{
+    display:inline-block;
+    background:#d4af37;
+    color:black;
+    padding:6px 12px;
+    border-radius:30px;
+    font-size:0.8rem;
+    font-weight:600;
+    margin-bottom:15px;
+}
+
+.badge{
+    position:absolute;
+    top:15px;
+    left:15px;
+    padding:5px 12px;
+    border-radius:20px;
+    font-size:0.75rem;
+    font-weight:600;
+}
+
+.popular{
+    background:#d4af37;
+    color:black;
+}
+
+.new{
+    background:#4caf50;
+    color:black;
+}
+
+.chef{
+    background:#ff5722;
+    color:white;
+}
+
+.card-buttons{
+    display:flex;
+    gap:10px;
+}
+
+.edit-btn,
+.delete-btn{
+    flex:1;
+    border:none;
+    padding:10px;
+    border-radius:12px;
+    cursor:pointer;
+    font-weight:600;
+    transition:0.3s;
+}
+
+.edit-btn{
+    background:#d4af37;
+    color:black;
+}
+
+.delete-btn{
+    background:#ff3b30;
+    color:white;
+}
+
+.edit-btn:hover,
+.delete-btn:hover{
+    transform:translateY(-2px);
+}
+
+/* EMPTY */
+.empty-state{
+    text-align:center;
+    color:#888;
+    margin-top:100px;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+
+.dashboard{
+    grid-template-columns:1fr;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="admin-header">
+    <h1>Nile Food Admin Dashboard</h1>
+    <p>Manage restaurant menu items easily</p>
+</header>
+
+<!-- DASHBOARD -->
+<section class="dashboard">
+
+    <!-- LEFT FORM -->
+    <div class="admin-form">
+
+        <h2>Add Menu Item</h2>
+
+        <input type="text" id="foodName" placeholder="Food Name">
+
+        <input type="text" id="foodPrice" placeholder="Price Example $12.99">
+
+        <input type="text" id="foodImage" placeholder="Image Path Example img/pizza.jpg">
+
+        <select id="foodCategory">
+            <option value="Chicken">Chicken</option>
+            <option value="Pizza">Pizza</option>
+            <option value="Drinks">Drinks</option>
+            <option value="Beef">Beef</option>
+        </select>
+
+        <select id="foodBadge">
+            <option value="">No Badge</option>
+            <option value="popular">Popular</option>
+            <option value="new">New</option>
+            <option value="chef">Chef Pick</option>
+        </select>
+
+        <textarea id="foodDescription" placeholder="Food Description"></textarea>
+
+        <button id="addFoodBtn">Add Menu Item</button>
+
+    </div>
+
+
+    <!-- RIGHT PREVIEW -->
+    <div>
+
+        <div class="menu-preview" id="menuPreview">
+
+            <div class="empty-state" id="emptyState">
+                <h2>No Menu Items Yet</h2>
+                <p>Add your first food item from the form.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<script>
+
+const addFoodBtn = document.getElementById('addFoodBtn');
+const menuPreview = document.getElementById('menuPreview');
+const emptyState = document.getElementById('emptyState');
+
+let editMode = false;
+let currentEditCard = null;
+
+
+// ADD FOOD
+addFoodBtn.addEventListener('click', () => {
+
+    const foodName = document.getElementById('foodName').value;
+    const foodPrice = document.getElementById('foodPrice').value;
+    const foodImage = document.getElementById('foodImage').value;
+    const foodCategory = document.getElementById('foodCategory').value;
+    const foodBadge = document.getElementById('foodBadge').value;
+    const foodDescription = document.getElementById('foodDescription').value;
+
+
+    if(
+        foodName === '' ||
+        foodPrice === '' ||
+        foodImage === '' ||
+        foodDescription === ''
+    ){
+        alert('Please fill all fields');
+        return;
+    }
+
+
+    if(emptyState){
+        emptyState.style.display = 'none';
+    }
+
+
+    // EDIT MODE
+    if(editMode && currentEditCard){
+
+        currentEditCard.querySelector('img').src = foodImage;
+        currentEditCard.querySelector('h3').textContent = foodName;
+        currentEditCard.querySelector('.price').textContent = foodPrice;
+        currentEditCard.querySelector('.food-desc').textContent = foodDescription;
+        currentEditCard.querySelector('.category-tag').textContent = foodCategory;
+
+        const oldBadge = currentEditCard.querySelector('.badge');
+
+        if(oldBadge){
+            oldBadge.remove();
+        }
+
+        if(foodBadge !== ''){
+
+            const badge = document.createElement('div');
+            badge.className = `badge ${foodBadge}`;
+
+            if(foodBadge === 'popular'){
+                badge.textContent = 'Popular';
+            }
+
+            if(foodBadge === 'new'){
+                badge.textContent = 'New';
+            }
+
+            if(foodBadge === 'chef'){
+                badge.textContent = 'Chef Pick';
+            }
+
+            currentEditCard.appendChild(badge);
+        }
+
+        editMode = false;
+        currentEditCard = null;
+
+        addFoodBtn.textContent = 'Add Menu Item';
+
+        clearForm();
+
+        return;
+    }
+
+
+    // CREATE CARD
+    const card = document.createElement('div');
+    card.classList.add('menu-card');
+
+
+    let badgeHTML = '';
+
+    if(foodBadge === 'popular'){
+        badgeHTML = `<div class="badge popular">Popular</div>`;
+    }
+
+    if(foodBadge === 'new'){
+        badgeHTML = `<div class="badge new">New</div>`;
+    }
+
+    if(foodBadge === 'chef'){
+        badgeHTML = `<div class="badge chef">Chef Pick</div>`;
+    }
+
+
+    card.innerHTML = `
+
+        ${badgeHTML}
+
+        <img src="${foodImage}" alt="${foodName}">
+
+        <div class="card-content">
+
+            <div class="category-tag">${foodCategory}</div>
+
+            <h3>${foodName}</h3>
+
+            <p class="food-desc">${foodDescription}</p>
+
+            <div class="price">${foodPrice}</div>
+
+            <div class="card-buttons">
+
+                <button class="edit-btn">Edit</button>
+
+                <button class="delete-btn">Delete</button>
+
+            </div>
+
+        </div>
+
+    `;
+
+
+    menuPreview.appendChild(card);
+
+
+    // DELETE
+    const deleteBtn = card.querySelector('.delete-btn');
+
+    deleteBtn.addEventListener('click', () => {
+
+        card.remove();
+
+        if(menuPreview.children.length === 1){
+            emptyState.style.display = 'block';
+        }
+
+    });
+
+
+    // EDIT
+    const editBtn = card.querySelector('.edit-btn');
+
+    editBtn.addEventListener('click', () => {
+
+        editMode = true;
+        currentEditCard = card;
+
+        document.getElementById('foodName').value =
+        card.querySelector('h3').textContent;
+
+        document.getElementById('foodPrice').value =
+        card.querySelector('.price').textContent;
+
+        document.getElementById('foodImage').value =
+        card.querySelector('img').src;
+
+        document.getElementById('foodDescription').value =
+        card.querySelector('.food-desc').textContent;
+
+        document.getElementById('foodCategory').value =
+        card.querySelector('.category-tag').textContent;
+
+        const badge = card.querySelector('.badge');
+
+        if(badge){
+
+            if(badge.classList.contains('popular')){
+                document.getElementById('foodBadge').value = 'popular';
+            }
+
+            else if(badge.classList.contains('new')){
+                document.getElementById('foodBadge').value = 'new';
+            }
+
+            else if(badge.classList.contains('chef')){
+                document.getElementById('foodBadge').value = 'chef';
+            }
+
+        }
+
+        addFoodBtn.textContent = 'Update Menu Item';
+
+        window.scrollTo({
+            top:0,
+            behavior:'smooth'
+        });
+
+    });
+
+
+    clearForm();
+
+});
+
+
+// CLEAR FORM
+function clearForm(){
+
+    document.getElementById('foodName').value = '';
+    document.getElementById('foodPrice').value = '';
+    document.getElementById('foodImage').value = '';
+    document.getElementById('foodDescription').value = '';
+    document.getElementById('foodBadge').value = '';
+
+}
+
+</script>
+
+</body>
+</html>

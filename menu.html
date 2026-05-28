@@ -297,6 +297,13 @@ nav ul li a.active::after {
     color: #000;
 }
 
+@media (max-width: 480px) {
+
+    .filter-btn {
+        width: 100%;
+    }
+
+}
 /* ================================
    SITE-WIDE ORDER CTA BANNER
 ================================ */
@@ -667,6 +674,27 @@ nav ul li a.active::after {
             }
         }
 
+        @media (max-width: 600px) {
+
+    .menu-section {
+        padding: 50px 15px;
+    }
+
+    .menu-card-content {
+        min-height: auto;
+    }
+
+}@media (max-width: 600px) {
+
+    .menu-hero .hero-left h1 {
+        font-size: 2.2rem;
+    }
+
+    .menu-hero .hero-left p {
+        font-size: 1rem;
+    }
+
+}
 .delivery-info{
     background-color: #1d1d1d;
     text-align: center;
@@ -794,6 +822,17 @@ nav ul li a.active::after {
     color: white;
     cursor: pointer;
 }
+@media (max-width: 480px) {
+
+    .popup-box {
+        padding: 22px;
+    }
+
+}
+img {
+    max-width: 100%;
+    display: block;
+}
         /* FOOTER SECTION */
 .footer-section {
     width: 100%;
@@ -873,6 +912,51 @@ nav ul li a.active::after {
         gap: 15px;
     }
 }
+/* EXTRA MOBILE POLISH */
+@media (max-width: 768px) {
+
+    .menu-card-content {
+        min-height: auto;
+    }
+
+    .menu-card img {
+        height: 220px;
+    }
+
+    .hero-left h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-left p {
+        font-size: 1rem;
+    }
+
+    .menu-title {
+        font-size: 2rem;
+    }
+
+    .menu-subtitle {
+        font-size: 0.95rem;
+        padding: 0 10px;
+    }
+
+    .featured-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .order-cta-text h2 {
+        font-size: 1.6rem;
+    }
+
+    .popup-box {
+        padding: 20px;
+    }
+
+    .popup-box h2 {
+        font-size: 1.4rem;
+    }
+
+}
     </style>
 </head>
 <body>
@@ -895,6 +979,7 @@ nav ul li a.active::after {
                 <li><a href="about.html">About</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
                 <li><a href="contact.html">Contact</a></li>
+                <li><a href="admin.html">Admin</a></li>
             </ul>
         </nav>
     </div>
