@@ -130,7 +130,13 @@
         nav ul li a:hover::after {
             width: 100%;
         }
+nav ul li a.active {
+    color: #d4af37;
+}
 
+nav ul li a.active::after {
+    width: 100%;
+}
         /* MOBILE MENU */
         .menu-toggle {
             display: none;
@@ -267,6 +273,7 @@
     gap: 15px;
     margin-bottom: 40px;
     flex-wrap: wrap;
+     margin-top: 20px;
 }
 
 .filter-btn {
@@ -422,7 +429,7 @@
 /* Pulse animation */
 @keyframes pulseBanner {
     0% { transform: scale(1); }
-    50% { transform: scale(1.5); }
+   50% { transform: scale(1.03); }
     100% { transform: scale(1); }
 }
 
@@ -447,6 +454,57 @@
             margin-bottom: 50px;
         }
 
+        .featured-today {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 20px;
+    text-align: center;
+        background: #111;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 20px;
+    padding: 40px 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.featured-today h2 {
+    color: #d4af37;
+    margin-bottom: 30px;
+     margin-bottom: 40px;
+     
+}
+
+.featured-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.featured-card {
+    background: #1a1a1a;
+    padding: 20px;
+    border-radius: 15px;
+    position: relative;
+    transition: 0.3s;
+}
+
+.featured-card:hover {
+    transform: translateY(-5px);
+    border:1px groove #d4af37
+}
+
+.badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: bold;
+}
+
+.badge.popular { background: #d4af37; color: #000; }
+.badge.new { background: #4caf50; color: #000; }
+.badge.chef { background: #ff5722; color: #fff; }
         .menu-grid {
             max-width: 1200px;
             margin: auto;
@@ -454,6 +512,7 @@
             grid-template-columns: repeat(4, 1fr);
             gap: 30px;
             margin-bottom: 10px;
+            margin-left: 0%;
         }
 
         .menu-card {
@@ -464,31 +523,68 @@
             transition: all 0.3s ease;
             display: flex;
             flex-direction: column;
+             position: relative;
         }
+.popular-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: #d4af37;
+    color: #000;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+.badge {
+    display: inline-block;
+    white-space: nowrap;
+    padding: 4px 10px;
+    font-size: 0.75rem;
+    border-radius: 20px;
+     min-width: 55px;
+    text-align: center;
+}
 
+.badge.new { background: #4caf50; color: #000; }
+.badge.popular { background: #d4af37; color: #000; }
+.badge.chef { background: #ff5722; color: #fff; }
         .menu-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+            box-shadow: 0 5px 10px #d4af37;
         }
 
         .menu-card img {
             width: 100%;
             height: 200px;
             object-fit: cover;
+              transition: transform 0.4s ease;
         }
-
+.menu-card:hover img {
+    transform: scale(1.08);
+}
         .menu-card-content {
             padding: 20px;
             flex: 1;
             display: flex;
             flex-direction: column;
+             min-height: 260px;
         }
 
         .menu-card-content h3 {
             font-size: 1.3rem;
             margin-bottom: 8px;
         }
-
+.rating {
+    color: #FFD700;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+.featured-note {
+    color: #ccc;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+}
         .menu-card-content p {
             font-size: 0.95rem;
             color: #cccccc;
@@ -616,6 +712,74 @@
     }
 }
 
+/* ORDER POPUP */
+.order-popup {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.8);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+}
+
+.popup-box {
+    background: #111;
+    width: 90%;
+    max-width: 420px;
+    padding: 30px;
+    border-radius: 20px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.popup-box h2 {
+    color: #d4af37;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.popup-box input,
+.popup-box textarea {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 14px;
+    border: 1px solid #333;
+    background: #1a1a1a;
+    color: white;
+    border-radius: 10px;
+    outline: none;
+}
+
+.popup-box textarea {
+    height: 100px;
+    resize: none;
+}
+
+.popup-box button {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 30px;
+    background: #d4af37;
+    color: black;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.popup-box button:hover {
+    background: #b8962e;
+}
+
+.close-popup {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 1.8rem;
+    color: white;
+    cursor: pointer;
+}
         /* FOOTER SECTION */
 .footer-section {
     width: 100%;
@@ -712,7 +876,7 @@
         <!-- NAV -->
         <nav>
            <ul>
-            
+            <li><a href="menu.html" class="active">Menu</a></li>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
@@ -729,7 +893,7 @@
         <div class="hero-left">
             <h1>Our Menu</h1>
             <p>Browse our dishes and order your favorites!</p>
-            <a href="https://wa.me/211923666154?text=Hello%20I%20want%20to%20order" class="hero-btn" target="_blank">Order via WhatsApp</a>
+            <a href="https://wa.me/211923704069?text=Hello%20I%20want%20to%20order" class="hero-btn" target="_blank">Order via WhatsApp</a>
         </div>
 
         <!-- Right: Menu Poster -->
@@ -748,7 +912,7 @@
         <p>Fresh meals prepared daily. Fast delivery & takeaway available.</p>
     </div>
 
-    <a href="https://wa.me/211923666154" target="_blank" class="order-cta-btn">
+    <a href="https://wa.me/211923704069" target="_blank" class="order-cta-btn">
         Order via WhatsApp
     </a>
 </section>
@@ -762,6 +926,32 @@
 <section class="menu-section">
     <h2 class="menu-title">Our Menu</h2>
     <p class="menu-subtitle">Select quantity and order instantly on WhatsApp</p>
+    
+<section class="featured-today">
+    <h2>⭐ Featured Today</h2>
+
+    <div class="featured-grid">
+
+        <div class="featured-card popular">
+            <span class="badge popular">Popular</span>
+            <h3>Grilled Chicken Combo</h3>
+            <p>$14.99</p>
+        </div>
+
+        <div class="featured-card new">
+            <span class="badge new">New</span>
+            <h3>Fresh Juice Mix</h3>
+            <p>$10.25</p>
+        </div>
+
+        <div class="featured-card chef">
+            <span class="badge chef">Chef’s Pick</span>
+            <h3>Beef Steak Special</h3>
+            <p>$18.50</p>
+        </div>
+
+    </div>
+</section>
     <div class="menu-filters">
     <button class="filter-btn active" data-category="all">All</button>
     <button class="filter-btn" data-category="chicken">Chicken</button>
@@ -774,10 +964,12 @@
         <!-- Grilled Chicken -->
      <div class="menu-card" data-category="chicken" data-name="Grilled Chicken" data-price="$12.99">
 
-            <img src="https://images.unsplash.com/photo-1600891963935-c9c1b5c6e3c4?auto=format&fit=crop&w=900&q=80" alt="Grilled Chicken" loading="lazy"
->
+            <img src="img/Grilled Chicken.jpg" alt="Grilled Chicken" loading="lazy"
+><div class="popular-badge">Popular</div>
             <div class="menu-card-content">
                 <h3>Grilled Chicken</h3>
+                <div class="rating">⭐ 4.9</div>
+                <p class="featured-note">🔥 Most loved dishes by our customers</p>
                 <p>Juicy grilled chicken seasoned with herbs and spices.</p>
                 <div class="price">$12.99</div>
 
@@ -792,11 +984,12 @@
         </div>
 
         <!-- Beef Steak -->
-        <div class="menu-card" data-category="pizza"  data-name="Beef Steak" data-price="18.50">
-            <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=900&q=80" alt="Beef Steak" loading="lazy"
->
+        <div class="menu-card" data-category="beef"  data-name="Beef Steak" data-price="$18.50">
+            <img src="img/Beef Steak.jpg" alt="Beef Steak" loading="lazy"
+><div class="badge new">🆕New</div>
             <div class="menu-card-content">
                 <h3>Beef Steak</h3>
+                <div class="rating">⭐ 4.9</div>
                 <p>Premium beef steak cooked to perfection.</p>
                 <div class="price">$18.50</div>
 
@@ -813,10 +1006,11 @@
         <!-- Veggie Pizza -->
     <div class="menu-card" data-category="pizza" data-name="Veggie Pizza" data-price="$10.75">
 
-            <img src="https://images.unsplash.com/photo-1542281286-9e0a16bb7366?auto=format&fit=crop&w=900&q=80" alt="Veggie Pizza" loading="lazy"
->
+            <img src="img/Pizza.jpg" alt="Veggie Pizza" loading="lazy"
+><div class="popular-badge">Popular</div>
             <div class="menu-card-content">
                 <h3>Veggie Pizza</h3>
+                <div class="rating">⭐ 4.9</div>
                 <p>Fresh vegetables, melted cheese, crispy crust.</p>
                 <div class="price">$10.75</div>
 
@@ -831,12 +1025,13 @@
         </div>
 
         <!-- Seafood Pasta -->
-        <div class="menu-card" data-category="drinks" data-name="Seafood Pasta" data-price="15.25">
-            <img src="https://images.unsplash.com/photo-1604908554026-9f5e1c74c4b4?auto=format&fit=crop&w=900&q=80" alt="Seafood Pasta" loading="lazy"
->
+        <div class="menu-card" data-category="drinks" data-name="Seafood Pasta" data-price="$15.25">
+            <img src="img/Drinks.jpg" alt="Seafood Pasta" loading="lazy"
+><div class="badge new">🆕New</div>
             <div class="menu-card-content">
-                <h3>Seafood Pasta</h3>
-                <p>Pasta mixed with fresh seafood and creamy sauce.</p>
+                <h3>cool drinks</h3>
+                <div class="rating">⭐ 4.9</div>
+                <p>soft orange juice</p>
                 <div class="price">$15.25</div>
 
                 <div class="quantity-control">
@@ -849,11 +1044,12 @@
             </div>
         </div>
         <!-- fresh juice -->
-        <div class="menu-card" data-category="drinks" data-name="Seafood Pasta" data-price="15.25">
+        <div class="menu-card" data-category="drinks" data-name="cool drinks" data-price="$15.25">
             <img src="img/Green and Brown Simple Modern Bubble Tea Poster.png" alt="fresh juice" loading="lazy"
->
+><div class="popular-badge">Popular</div>
             <div class="menu-card-content">
                 <h3>fresh juice</h3>
+                <div class="rating">⭐ 4.9</div>
                 <p>ovacado, watermelon juice</p>
                 <div class="price">$10.25</div>
 
@@ -870,6 +1066,38 @@
 
     </div>
 </section>
+<!-- ORDER POPUP -->
+<div class="order-popup" id="orderPopup">
+
+    <div class="popup-box">
+
+        <span class="close-popup" id="closePopup">&times;</span>
+
+        <h2>Complete Your Order</h2>
+
+        <input type="text"
+        id="customerName"
+        placeholder="Your Name">
+
+        <input type="text"
+        id="customerLocation"
+        placeholder="Delivery Location">
+
+        <input type="tel"
+        id="customerPhone"
+        placeholder="Phone Number">
+
+        <textarea
+        id="customerNote"
+        placeholder="Extra Note"></textarea>
+
+        <button id="sendOrderBtn">
+            Order via WhatsApp
+        </button>
+
+    </div>
+
+</div>
 <!-- Floating WhatsApp Button -->
 <a href="https://wa.me/211923666154" target="_blank" class="floating-whatsapp">
     <img src="img/whatsapp-icon.png" alt="Order on WhatsApp" loading="lazy"
@@ -878,6 +1106,11 @@
 
 
 <hr>
+<section class="delivery-info">
+   <h2>Fast Delivery in Juba</h2>
+   <p>We deliver fresh meals quickly to your location.</p>
+</section>
+
 
 <!-- FOOTER SECTION -->
 <footer class="footer-section">
@@ -900,13 +1133,14 @@
                 <p>Hours: Mon-Sun 07:30 - 05:00</p>
             </div>
 
-            <!-- COLUMN 3: SOCIAL MEDIA -->
+              <!-- COLUMN 3: SOCIAL MEDIA -->
             <div class="footer-column social">
                 <h3>Follow Us</h3>
                 <div class="social-icons">
-                    <a href="#" target="_blank">Facebook</a>
+                    <a href="https://facebook.com/isaaco keni anmoi">Facebook</a>
                     <a href="#" target="_blank">Instagram</a>
-                    <a href="https://wa.me/211923666154?text=Hello%20I%20want%20to%20order" target="_blank">WhatsApp</a>
+                    <a href="https://wa.me/211923704069" target="_blank">WhatsApp</a>
+                      <a href="https://www.youtube.com/@VukeniIsaaclukemoi" target="_blank">YouTube</a>
                 </div>
             </div>
 
@@ -918,100 +1152,235 @@
         </div>
     </div>
 </footer>
-
 <script>
 
-const phoneNumber = "211923666154"; // <-- CHANGE to correct full international format
+const phoneNumber = "211923704069";
 
-document.querySelectorAll('.menu-card').forEach(card => {
-    card.addEventListener('click', () => {
-        const dishName = card.getAttribute('data-name');
-        const price = card.getAttribute('data-price');
+// ==========================
+// POPUP ELEMENTS
+// ==========================
+const popup = document.getElementById("orderPopup");
+const closePopup = document.getElementById("closePopup");
+const sendOrderBtn = document.getElementById("sendOrderBtn");
 
-        const message = `Hello, I would like to order ${dishName} (${price}). Please confirm availability.`;
-        const encodedMessage = encodeURIComponent(message);
+let selectedDish = "";
+let selectedPrice = 0;
+let selectedQuantity = 1;
 
-        const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
 
-        window.open(whatsappURL, '_blank');
+// ==========================
+// MENU CARD LOGIC
+// ==========================
+document.querySelectorAll(".menu-card").forEach(card => {
+
+    const minusBtn = card.querySelector(".minus");
+    const plusBtn = card.querySelector(".plus");
+    const qtyNumber = card.querySelector(".qty-number");
+    const orderBtn = card.querySelector(".order-btn");
+
+    let quantity = 1;
+
+    // MINUS BUTTON
+    minusBtn.addEventListener("click", () => {
+        if (quantity > 1) {
+            quantity--;
+            qtyNumber.textContent = quantity;
+        }
     });
+
+    // PLUS BUTTON
+    plusBtn.addEventListener("click", () => {
+        quantity++;
+        qtyNumber.textContent = quantity;
+    });
+
+    // OPEN POPUP
+    orderBtn.addEventListener("click", () => {
+
+        selectedDish = card.getAttribute("data-name");
+
+        selectedPrice = parseFloat(
+            card.getAttribute("data-price")
+        );
+
+        selectedQuantity = quantity;
+
+        popup.style.display = "flex";
+    });
+
 });
 
-    // Quantity buttons logic
-    document.querySelectorAll('.menu-card').forEach(card => {
-        const minusBtn = card.querySelector('.minus');
-        const plusBtn = card.querySelector('.plus');
-        const qtyNumber = card.querySelector('.qty-number');
-        const orderBtn = card.querySelector('.order-btn');
 
-        let quantity = 1;
+// ==========================
+// CLOSE POPUP
+// ==========================
+closePopup.addEventListener("click", () => {
+    popup.style.display = "none";
+});
 
-        minusBtn.addEventListener('click', () => {
-            if (quantity > 1) {
-                quantity--;
-                qtyNumber.textContent = quantity;
-            }
-        });
+// CLOSE WHEN CLICK OUTSIDE
+popup.addEventListener("click", (e) => {
+    if (e.target === popup) {
+        popup.style.display = "none";
+    }
+});
 
-        plusBtn.addEventListener('click', () => {
-            quantity++;
-            qtyNumber.textContent = quantity;
-        });
 
-        orderBtn.addEventListener('click', () => {
-            const dishName = card.getAttribute('data-name');
-            const price = card.getAttribute('data-price');
+// ==========================
+// SEND ORDER
+// ==========================
+sendOrderBtn.addEventListener("click", () => {
 
-            const message = `Hello, I would like to order ${quantity}x ${dishName} ($${price} each). Please confirm availability and total price.`;
-            const encodedMessage = encodeURIComponent(message);
-            const whatsappURL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
+    const customerName =
+        document.getElementById("customerName").value.trim();
 
-            window.open(whatsappURL, '_blank');
-        });
-    });
-  
-const filterButtons = document.querySelectorAll('.filter-btn');
-const menuCards = document.querySelectorAll('.menu-card');
+    const customerLocation =
+        document.getElementById("customerLocation").value.trim();
+
+    const customerPhone =
+        document.getElementById("customerPhone").value.trim();
+
+    const customerNote =
+        document.getElementById("customerNote").value.trim();
+
+    // VALIDATION
+    if (
+        customerName === "" ||
+        customerLocation === "" ||
+        customerPhone === ""
+    ) {
+        alert("Please fill all required fields.");
+        return;
+    }
+
+    const total =
+        (selectedQuantity * selectedPrice).toFixed(2);
+
+    const message = `Hello Nile Food Restaurant 👋
+
+Customer Name: ${customerName}
+
+Phone Number: ${customerPhone}
+
+Delivery Location: ${customerLocation}
+
+Order Details:
+🍽 Dish: ${selectedDish}
+
+Quantity: ${selectedQuantity}
+
+Price Each: $${selectedPrice}
+
+Total Price: $${total}
+
+Extra Note:
+${customerNote}
+
+Please confirm my order.`;
+
+    const encodedMessage =
+        encodeURIComponent(message);
+
+    const whatsappURL =
+        `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+    window.open(whatsappURL, "_blank");
+
+    // CLOSE POPUP
+    popup.style.display = "none";
+
+    // RESET FORM
+    document.getElementById("customerName").value = "";
+    document.getElementById("customerLocation").value = "";
+    document.getElementById("customerPhone").value = "";
+    document.getElementById("customerNote").value = "";
+
+});
+
+
+// ==========================
+// FILTER BUTTONS
+// ==========================
+const filterButtons =
+document.querySelectorAll(".filter-btn");
+
+const menuCards =
+document.querySelectorAll(".menu-card");
 
 filterButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        // Remove active class
-        filterButtons.forEach(btn => btn.classList.remove('active'));
-        button.classList.add('active');
 
-        const category = button.getAttribute('data-category');
+    button.addEventListener("click", () => {
+
+        filterButtons.forEach(btn =>
+            btn.classList.remove("active")
+        );
+
+        button.classList.add("active");
+
+        const category =
+            button.getAttribute("data-category");
 
         menuCards.forEach(card => {
-            const cardCategory = card.getAttribute('data-category');
 
-            if (category === 'all' || cardCategory === category) {
-                card.style.display = 'block';
+            const cardCategory =
+                card.getAttribute("data-category");
+
+            if (
+                category === "all" ||
+                cardCategory === category
+            ) {
+                card.style.display = "flex";
             } else {
-                card.style.display = 'none';
+                card.style.display = "none";
             }
+
         });
+
     });
+
 });
 
 
+// ==========================
+// DAILY SPECIALS ROTATION
+// ==========================
 const specials = [
     { name: "Grilled Chicken Combo", price: "$14.99" },
     { name: "Veggie Pizza Deal", price: "$12.50" },
     { name: "Seafood Pasta Special", price: "$16.75" },
-    { name: "Seafood Pasta Special", price: "$16.75" }
+    { name: "Fresh Juice Combo", price: "$9.99" }
 ];
 
-const banner = document.querySelector('.daily-specials .special-banner p');
+const banner =
+document.querySelector(
+".daily-specials .special-banner p"
+);
 
 let current = 0;
-setInterval(() => {
-    const special = specials[current];
-    banner.innerHTML = `🔥 Today’s Special: <strong>${special.name}</strong> – Only ${special.price}! <a href="https://wa.me/211923666154?text=Hello%2C%20I%20would%20like%20to%20order%20the%20${encodeURIComponent(special.name)}." target="_blank">Order Now</a>`;
-    current = (current + 1) % specials.length;
-}, 7000); // rotates every 7 seconds
 
+setInterval(() => {
+
+    const special = specials[current];
+
+    banner.innerHTML = `
+🔥 Today’s Special:
+<strong>${special.name}</strong>
+– Only ${special.price}!
+
+<a href="https://wa.me/${phoneNumber}?text=Hello%20I%20want%20to%20order%20${encodeURIComponent(special.name)}"
+target="_blank">
+Order Now
+</a>
+`;
+
+    current =
+    (current + 1) % specials.length;
+
+}, 7000);
 
 </script>
+
+
 
 </body>
 </html>
