@@ -142,6 +142,13 @@
             width: 100%;
         }
 
+nav ul li a.active {
+    color: #d4af37;
+}
+
+nav ul li a.active::after {
+    width: 100%;
+}
         /* MOBILE MENU */
         .menu-toggle {
             display: none;
@@ -486,7 +493,9 @@
     grid-template-columns: repeat(4, 1fr);
     gap: 25px;
 }
-
+.dish-link{
+    text-decoration: none;
+}
 /* CARD */
 .dish-card {
     background: #ffffff;
@@ -498,7 +507,7 @@
 
 .dish-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+    box-shadow: 0 10px 15px #d4af37;
 }
 
 .dish-card img {
@@ -551,10 +560,18 @@
 .why-choose-section {
     width: 100%;
     padding: 80px 20px;
-    background: #0b0b0b;
+
+    background:
+    linear-gradient(rgba(0,0,0,0.85),
+    rgba(0,0,0,0.85)),
+    url('img/lotus-design-n-print-O0vzxGRmjNs-unsplash.jpg');
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
     font-family: 'Poppins', sans-serif;
 }
-
 .why-container {
     max-width: 1200px;
     margin: auto;
@@ -579,7 +596,8 @@
 
 /* FEATURE CARD */
 .feature-card {
-    background: #1a1a1a;
+    background: rgba(20,20,20,0.85);
+backdrop-filter: blur(5px);
     flex: 1 1 30%;
     padding: 30px 20px;
     border-radius: 16px;
@@ -591,15 +609,30 @@
     transform: translateY(-6px);
     box-shadow: 0 8px 20px rgba(212, 175, 55, 0.5);
     border: #d4af37 solid 2px;
-    box-shadow: 20px, 10px;
 }
 
 .feature-icon {
-    font-size: 2.5rem;
-    color: #d4af37;
-    margin-bottom: 20px;
+    width: 90px;
+    height: 90px;
+    margin: 0 auto 20px;
 }
 
+.feature-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    border-radius: 50%;
+    border: 3px solid #d4af37;
+
+    box-shadow: 0 5px 15px rgba(212,175,55,0.4);
+
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover .feature-icon img {
+    transform: scale(1.08);
+}
 .feature-card h3 {
     font-size: 1.3rem;
     color: #ffffff;
@@ -784,8 +817,8 @@
         <!-- NAV -->
         <nav>
             <ul>
-            
-                <li><a href="index.html">Home</a></li>
+            <li><a href="index.html" class="active">Home</a></li>
+
                 <li><a href="about.html">About</a></li>
                 <li><a href="menu.html">Menu</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
@@ -801,7 +834,7 @@
 
     <div class="hero-content">
         <h1>Nile Food Restaurant</h1>
-        <h2>best online restaurant website for you</h2>
+        <h2>Fresh Meals Served With Passion</h2>
         <p>Fresh. Tasty. Modern Dining.</p>
         
 
@@ -845,7 +878,7 @@
                 From intimate dinners to family gatherings, we offer a warm atmosphere, professional service, and meals that keep our guests coming back.
             </p>
 
-            <a href="#about" class="about-btn">Read More</a>
+            <a href="about.html" class="about-btn">Read More</a>
         </div>
 
     </div>
@@ -862,20 +895,25 @@
 
         <div class="dishes-grid">
 
-            <!-- DISH 1 -->
-            <div class="dish-card">
-                <img src="https://images.unsplash.com/photo-1600891963935-c9c1b5c6e3c4?auto=format&fit=crop&w=900&q=80" alt="Grilled Chicken" loading="lazy"
->
-                <div class="dish-content">
-                    <h3>Grilled Chicken</h3>
-                    <p>Juicy grilled chicken seasoned with special herbs and spices.</p>
-                    <span class="price">$12.99</span>
-                </div>
-            </div>
+        <!-- DISH 1 -->
+<a href="https://wa.me/211923666154?text=Hello%20I%20want%20to%20order%20Grilled%20Chicken" target="_blank" class="dish-link">
+
+<div class="dish-card">
+    <img src="img/Grilled Chicken.jpg" alt="Grilled Chicken" loading="lazy">
+
+    <div class="dish-content">
+        <h3>Grilled Chicken</h3>
+        <p>Juicy grilled chicken seasoned with special herbs and spices.</p>
+        <span class="price">$12.99</span>
+    </div>
+</div>
+
+</a>
 
             <!-- DISH 2 -->
+             <a href="https://wa.me/211923666154?text=Hello%20I%20want%20to%20order%20Beef%20Steak" target="_blank" class="dish-link">
             <div class="dish-card">
-                <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=900&q=80" alt="Beef Steak" loading="lazy"
+                <img src="img/Beef Steak.jpg" alt="Beef Steak" loading="lazy"
 >
                 <div class="dish-content">
                     <h3>Beef Steak</h3>
@@ -883,10 +921,11 @@
                     <span class="price">$18.50</span>
                 </div>
             </div>
-
+</a>
             <!-- DISH 3 -->
+             <a href="https://wa.me/211923666154?text=Hello%20I%20want%20to%20order%20Veggie%20pizza" target="_blank" class="dish-link">
             <div class="dish-card">
-                <img src="https://images.unsplash.com/photo-1542281286-9e0a16bb7366?auto=format&fit=crop&w=900&q=80" alt="Veggie Pizza" loading="lazy"
+                <img src="img/Pizza.jpg" alt="Veggie Pizza" loading="lazy"
 >
                 <div class="dish-content">
                     <h3>Veggie Pizza</h3>
@@ -894,10 +933,11 @@
                     <span class="price">$10.75</span>
                 </div>
             </div>
-
+</a>
             <!-- DISH 4 -->
+             <a href="https://wa.me/211923666154?text=Hello%20I%20want%20to%20order%20Seafood %20pasta" target="_blank" class="dish-link">
             <div class="dish-card">
-                <img src="https://images.unsplash.com/photo-1604908554026-9f5e1c74c4b4?auto=format&fit=crop&w=900&q=80" alt="Seafood Pasta" loading="lazy"
+                <img src="img/Seafood Pasta.jpg" alt="Seafood Pasta" loading="lazy"
 >
                 <div class="dish-content">
                     <h3>Seafood Pasta</h3>
@@ -905,7 +945,7 @@
                     <span class="price">$15.25</span>
                 </div>
             </div>
-
+</a>
         </div>
 
     </div>
@@ -925,21 +965,27 @@
 
             <!-- FEATURE 1 -->
             <div class="feature-card">
-                <div class="feature-icon">🍴</div>
+                <div class="feature-icon">
+    <img src="img/fresh ingrediant.jpg" alt="Fresh Ingredients">
+</div>
                 <h3>Fresh Ingredients</h3>
                 <p>We use only the freshest ingredients to prepare every meal with care and quality.</p>
             </div>
 
             <!-- FEATURE 2 -->
             <div class="feature-card">
-                <div class="feature-icon">⚡</div>
+                <div class="feature-icon">
+                 <img src="img/delivery rider.jpg" alt="Fresh Ingredients">
+</div>
                 <h3>Fast Service</h3>
                 <p>Our team ensures quick and efficient service so you can enjoy your meal without delay.</p>
             </div>
 
             <!-- FEATURE 3 -->
             <div class="feature-card">
-                <div class="feature-icon">✨</div>
+                <div class="feature-icon">
+                <img src="img/lotus-design-n-print-O0vzxGRmjNs-unsplash.jpg" alt="Fresh Ingredients">
+</div>
                 <h3>Clean Environment</h3>
                 <p>We maintain a spotless and welcoming environment for a premium dining experience.</p>
             </div>
@@ -976,16 +1022,17 @@
                 <h3>Contact</h3>
                       <p>Hai-commercial street</p>
                 <p>Phone: +211 923666154/ +211 913195460</p>
-                <p>Hours: Mon-Sun 07:30 - 05:00</p>
+                <p>Hours: Mon-Sun 7:30 AM - 11:00 PM</p>
             </div>
 
             <!-- COLUMN 3: SOCIAL MEDIA -->
             <div class="footer-column social">
                 <h3>Follow Us</h3>
                 <div class="social-icons">
-                    <a href="#" target="_blank">Facebook</a>
+                    <a href="https://facebook.com/isaaco keni anmoi">Facebook</a>
                     <a href="#" target="_blank">Instagram</a>
-                    <a href="https://wa.me/0923666154" target="_blank">WhatsApp</a>
+                    <a href="https://wa.me/211923704069" target="_blank">WhatsApp</a>
+                      <a href="https://www.youtube.com/@VukeniIsaaclukemoi" target="_blank">YouTube</a>
                 </div>
             </div>
 
@@ -996,6 +1043,7 @@
             <p>&copy; 2026 Nile Food Restaurant. All rights reserved.</p>
         </div>
     </div>
+
 </footer>
 </body>
 </html>
